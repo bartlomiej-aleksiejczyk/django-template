@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "common",
     "users",
     "axes",
+    "django.contrib.postgres",
 ]
 
 MIDDLEWARE = [
@@ -88,8 +89,12 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB", "template_postgres"),
+        "USER": os.getenv("POSTGRES_USER", "postgres"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "postgres"),
+        "HOST": os.getenv("POSTGRES_HOST", "db"),
+        "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
 }
 
