@@ -20,7 +20,7 @@ services:
       DJANGO_SECRET_KEY: "your-secret-key-here"
       DEBUG: "True"
       ALLOWED_HOSTS: "localhost,192.168.0.29,0.0.0.0"
-      POSTGRES_DB: template_postgres
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_HOST: db
@@ -31,13 +31,14 @@ services:
       - db
 
   db:
-    image: postgres:latest
+    image: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      POSTGRES_DB: template_postgres
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    restart: always
 
 volumes:
   postgres_data:
