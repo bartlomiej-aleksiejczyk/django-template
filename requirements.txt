@@ -5,6 +5,7 @@ cffi==1.16.0
 Django==5.0.6
 django-axes==6.5.0
 django-ipware==7.0.1
+huey==2.5.1
 psycopg2-binary==2.9.9
 pycparser==2.22
 python-ipware==3.0.0
