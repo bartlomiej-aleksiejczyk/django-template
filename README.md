@@ -14,6 +14,7 @@ This template includes:
 - Working Auth without registration
 - Fail2Ban integration
 - Precoinfigured templates and static files
+- Huey configured as message queue
 
 ## Command Passthrough
 
